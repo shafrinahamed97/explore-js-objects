@@ -5,8 +5,24 @@ const student = {
     subjects: ['C-Programming','Java Programming','python language'],
     exam: function()
     {
-        console.log(this.money, 'is participating in exam');
+       return this.money + ' is participating in exam';
+    },
+    improveExam: function(subject){
+        this.exam();
+        return  ` ${this.name} is takeing improvement exam on ${subject}`
+    },
+    treatDey: function(amount, tips){
+        this.money = this.money - amount - tips;
+        return this.money;
     }
-
 }
-student.exam();
+const output = student.exam();
+// console.log(output);
+const reExam  = student.improveExam('EEE');
+// console.log(reExam);
+
+const remaining = student.treatDey(900, 100);
+console.log(remaining);
+
+const dolaRemaining = student.treatDey(500, 100);
+console.log(dolaRemaining);
